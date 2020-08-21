@@ -1,3 +1,4 @@
- This is a Google Pay UI design for Desktop, and it is also mobile responsive. Languages used: HTML, CSS, SCSS
+ This is a Google Pay UI design for Desktop, and it is also mobile responsive.
+Languages and other supporting libraries used: HTML, CSS, SCSS, Bootstrap, Google Fonts. 
 
-project link: <a href="sureshgurjar.github.io/google_pay_ui">sureshgurjar.github.io/google_pay_ui</a> 
+project link: sureshgurjar.github.io/google_pay_ui
