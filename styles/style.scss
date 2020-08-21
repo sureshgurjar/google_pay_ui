@@ -1,0 +1,167 @@
+
+// Default colors and styles
+
+$primaryColor: #1a73e9;
+$accentColor: #fff;
+$secondaryTextColor: #575757;
+$defaultFontFamily: 'Roboto', sans-serif;
+$primaryShadow: #4e4e4e;
+$secondaryShadow: #114d9b;
+// Default colors and styles
+
+// Mixins and functions
+
+@mixin flexVerticalAlign($contentJustify, $alignItems, $flexDirection) {
+    display: flex;
+    justify-content: $contentJustify;
+    align-items: $alignItems;
+    flex-direction: $flexDirection;
+}
+
+@mixin verticalAlign($height, $lineHeight) {
+    height: $height;
+    line-height: $lineHeight;
+}
+// Mixins and functions
+
+body{
+    background-color: $primaryColor;
+    font-family: $defaultFontFamily;
+    color: $accentColor;
+    margin: 0;
+    padding: 0;
+}
+
+section{
+    height: 100vh;
+}
+
+// Account
+.account, .gpay{
+    @include flexVerticalAlign(center, center, column);
+    height: 100vh;
+    color: $accentColor;
+    text-align: center;
+}
+
+.account{
+    background-color: $accentColor;
+    color: $primaryColor;
+}
+
+.account img{
+    width: 200px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px $primaryShadow;
+    cursor: pointer;
+
+    &:hover{
+        box-shadow: 0 0 5px 2px $primaryShadow;
+    }
+}
+// Account
+
+
+// Gpay
+
+.gpay img {
+    width: 300px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 20px $secondaryShadow;
+    cursor: pointer;
+
+    &:hover{
+        box-shadow: 0 0 10px 10px $secondaryShadow;
+    }
+}
+
+// Gpay
+
+// Friends
+
+.friends{
+    padding-top: 1.5rem;
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: center;
+}
+
+.friends img{
+    width: 120px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px $secondaryShadow;
+
+    &:hover{
+        box-shadow: 0 0 10px 5px $secondaryShadow;
+    }
+}
+
+// Friends
+
+
+// Responsive and Media Queries
+
+// large and medium devices
+@media only screen and (max-width: 1200px){
+    
+    .account{
+        @include flexVerticalAlign(initial, initial, initial);
+        @include verticalAlign(50px, 50px);
+        color: $accentColor;
+        background-color: initial;
+        padding-top: 1rem;
+    }
+    .account img{
+        @include verticalAlign(50px, 50px);
+        width: 50px;
+        box-shadow: 0 0 5px 2px $primaryShadow;
+    }
+
+    .account h2{
+        @include verticalAlign(50px, 50px);
+        margin: 0;
+        padding-left: 1rem;
+    }
+
+    .gpay{
+        height: 70vh;
+    }
+    .gpay img{
+        width: 200px;
+    }
+
+    .friends{
+        padding-top: 1.5rem;
+        background-color: $accentColor;
+        color: $secondaryTextColor;
+        grid-template-columns: auto auto auto auto;
+    }
+    .friends img{
+        box-shadow: 0 0 10px $primaryShadow;
+    
+        &:hover{
+            box-shadow: initial;
+            border: 4px solid #00a8f3;
+            padding: 2px;
+        }
+    }
+
+}
+
+
+// Small screen devices
+@media only screen and (max-width: 600px){
+
+    .gpay{
+        height: 70vh;
+    }
+
+    .gpay img{
+        width: 130px;
+    }
+
+
+    .friends img{
+        width: 50px;
+    }
+}
